@@ -144,7 +144,7 @@ def finish_pdf(pdf_in, pdf_out, notebook, headings):
     * add bookmarks pointing to the headers in a notebook
     """
     pdf = PyPDF2.PdfWriter()
-    pdf.appendPagesFromReader(PyPDF2.PdfFileReader(pdf_in, "rb"))
+    pdf.appendPagesFromReader(PyPDF2.PdfReader(pdf_in, "rb"))
     pdf.addAttachment(notebook["file_name"], notebook["contents"])
 
     for heading in sorted(headings, key=lambda x: x["top"]):
