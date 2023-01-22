@@ -143,7 +143,7 @@ def finish_pdf(pdf_in, pdf_out, notebook, headings):
     * attach the original notebook to the PDF for reference
     * add bookmarks pointing to the headers in a notebook
     """
-    pdf = PyPDF2.PdfFileWriter()
+    pdf = PyPDF2.PdfWriter()
     pdf.appendPagesFromReader(PyPDF2.PdfFileReader(pdf_in, "rb"))
     pdf.addAttachment(notebook["file_name"], notebook["contents"])
 
